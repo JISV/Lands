@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="Lands.Views.LoginPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label 
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="Lands">
+            </Label>
+            <Image
+                Source="Lands"
+                WidthRequest="200">
+            </Image>
+            <StackLayout
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <Label 
+                    Text="       Email"
+                    VerticalTextAlignment="Center">
+                </Label>
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    Keyboard="Email"
+                    Placeholder="Enter your email...">
+                </Entry>
+             </StackLayout>
+            <StackLayout 
+                HorizontalOptions="FillAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="Center">
+                <Label 
+                    Text="Password"
+                    VerticalTextAlignment="Center">
+                </Label>
+                <Entry
+                    HorizontalOptions="FillAndExpand"
+                    IsPassword="true"
+                    Placeholder="Enter your password...">
+                </Entry> 
+            </StackLayout>
+            <ActivityIndicator>
+                    
+            </ActivityIndicator>
+            <Button
+                BackgroundColor="Navy"
+                BorderRadius="23"
+                FontAttributes="Bold"
+                Text="Login"
+                TextColor="White">
+            </Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
