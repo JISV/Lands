@@ -160,5 +160,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Lands.png" />
+    <BundleResource Include="Resources\twitter_Logo.png" />
+    <BundleResource Include="Resources\facebook_Logo.png" />
+    <BundleResource Include="Resources\instagram_Logo.png" />
   </ItemGroup>
 </Project>
