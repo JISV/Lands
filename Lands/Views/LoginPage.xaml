@@ -85,6 +85,7 @@
                 FontAttributes="Bold"
                 HeightRequest="46"
                 HorizontalOptions="FillAndExpand"
+                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                 Text="Login   "
                 TextColor="White">
             </Button>
@@ -95,6 +96,7 @@
                 FontAttributes="Bold"
                 HeightRequest="46"
                 HorizontalOptions="FillAndExpand"
+                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                 Text="Register"
                 TextColor="White">
             </Button>
