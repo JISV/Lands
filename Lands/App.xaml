@@ -4,7 +4,10 @@
              xmlns:infra="clr-namespace:Lands.Infrastructure"
              x:Class="Lands.App">
     <Application.Resources>
+        <!--Creamos el ResourceDictionary-->
         <ResourceDictionary>
+            <!--Creamos un objeto infra que es de la clase InstanceLocator
+            y a la propiedad la llamamos Locator-->
             <infra:InstanceLocator x:Key="Locator"/>
         </ResourceDictionary>
     </Application.Resources>
