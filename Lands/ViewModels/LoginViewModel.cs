@@ -9,12 +9,9 @@ namespace Lands.ViewModels
     using GalaSoft.MvvmLight.Command;
     using Xamarin.Forms;
 
-    public class LoginViewModel: INotifyPropertyChanged
+    public class LoginViewModel: BaseViewModel
     {
-        #region Events
-        public event PropertyChangedEventHandler PropertyChanged;
-        #endregion
-
+        
         //En los atributos pongo las propiedades privadas para los
         //campos que se tengan que refrescar en los controles
         //las pongo con el mismo nombre que las publicas pero en minuscula
@@ -23,6 +20,7 @@ namespace Lands.ViewModels
             private string password;
             private bool isRunning;
             private bool isEnabled;
+            private bool isRemembered;
         #endregion
 
 
@@ -30,71 +28,33 @@ namespace Lands.ViewModels
         #region Properties
         public string Email
         {
-            get;
-            set;
+            get { return this.email; }
+            set { SetValue(ref this.email, value); }
         }
 
         public string Password
         {
-            get
-            {
-                return this.password;
-            }
-            set
-            {
-               if (this.password != value) 
-                {
-                    this.password = value;
-                    PropertyChanged?.Invoke(
-                        this,
-                        new PropertyChangedEventArgs(nameof(this.Password)));
-                }
-            }
+            get { return password; }
+            set { SetValue(ref password, value); }
         }
 
         public bool IsRunning
         {
-            get
-            {
-                return this.isRunning;
-            }
-            set
-            {
-                if (this.isEnabled != value)
-                {
-                    this.isRunning = value;
-                    PropertyChanged?.Invoke(
-                        this,
-                        new PropertyChangedEventArgs(nameof(this.IsRunning)));
-                }
-            }
+            get { return isRunning; }
+            set { SetValue(ref isRunning, value); }
         }
 
         public bool IsRemembered
         {
-            get;
-            set;
+            get { return isRemembered; }
+            set { SetValue(ref isRemembered, value); }
         }
 
         public bool IsEnabled
         {
-            get
-            {
-                return this.isEnabled;
-            }
-            set
-            {
-                if (this.isEnabled != value)
-                {
-                    this.isEnabled = value;
-                    PropertyChanged?.Invoke(
-                        this,
-                        new PropertyChangedEventArgs(nameof(this.IsEnabled)));
-                }
-            }
+            get { return isEnabled; }
+            set { SetValue(ref isEnabled, value); }
         }
-
-
         #endregion
 
         //Los comandos son propiedades especiales y les creamos una region para ellos
