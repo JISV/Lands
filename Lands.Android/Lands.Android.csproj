@@ -101,11 +101,11 @@
     <AndroidResource Include="Resources\drawable\twitter_Logo.png" />
     <AndroidResource Include="Resources\drawable\facebook_Logo.png" />
     <AndroidResource Include="Resources\drawable\instagram_Logo.png" />
-    <AndroidResource Include="Resources\drawable\ic_chevronright.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\ic_chevronright.png" />
-    <AndroidResource Include="Resources\drawable-xhdpi\ic_chevronright.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\ic_chevronright.png" />
-    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_chevronright.png" />
+    <AndroidResource Include="Resources\drawable\ic_Chevron_Right.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\ic_Chevron_Right.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\ic_Chevron_Right.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\ic_Chevron_Right.png" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\ic_Chevron_Right.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
