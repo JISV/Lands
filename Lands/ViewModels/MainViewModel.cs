@@ -15,6 +15,13 @@ namespace Lands.ViewModels
             get;
             set;
         }
+        //LandDetailViewModel es la clase para mostrar
+        //el detalle del pais
+        public LandDetailViewModel LandDetail
+        {
+            get;
+            set;
+        }
         #endregion
 
         //Singleton es un patron que se usa para instanciar la MainViewModel 

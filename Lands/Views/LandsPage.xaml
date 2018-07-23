@@ -2,13 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Lands.Views.LandsPage"
+             BackgroundColor="Silver"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="Lands">
     <ContentPage.Content>
         <StackLayout 
             BindingContext="{Binding Lands}"
             Padding="5">
+            <!--hay que poner HeightRequest en el SearchBar
+            para que se vea en android-->
             <SearchBar
+                BackgroundColor="Silver"
+                HeightRequest="42"
                 Placeholder="Search..."
                 SearchCommand="{Binding SearchCommand}"
                 Text="{Binding Filter, Mode=TwoWay}">
@@ -24,10 +29,14 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
+                            <!--Frame es un contenedor para dar efectos en las celdas-->
                             <Frame
                                 CornerRadius="20"
                                 HasShadow="true"
                                 Margin="5">
+                                <!--Como nececito un comando para que
+                                cuando toque la celda se dispare el comando
+                                uso el GestureRecognizer-->
                                 <Frame.GestureRecognizers>
                                     <TapGestureRecognizer Command="{Binding SelectLandCommand}"/>
                                 </Frame.GestureRecognizers>

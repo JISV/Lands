@@ -20,14 +20,21 @@ namespace Lands.ViewModels
 
 
         #region Attributes
+
         private bool isRefreshing;
-        private ObservableCollection<Land> lands;
+        //Sustituyo la clase del modelo Land por la del espejo
+        //LandItemViewModel para no alterar el patron MVVM
+        //private ObservableCollection<Land> lands;
+        private ObservableCollection<LandItemViewModel> lands;
         private string filter;
         private List<Land> landsList;
         #endregion
 
         #region Properties
-        public ObservableCollection<Land> Lands
+        //Sustituyo la clase del modelo Land por la del espejo
+        //LandItemViewModel para no alterar el patron MVVM
+        //public ObservableCollection<Land> Lands;
+        public ObservableCollection<LandItemViewModel> Lands
         {
             get { return this.lands; }
             set { SetValue(ref this.lands, value); }
@@ -99,25 +106,100 @@ namespace Lands.ViewModels
             //luego lo convieto en un obsevablecollection
 
             this.landsList = (List<Land>)response.Result;
-            this.Lands = new ObservableCollection<Land>(this.landsList);
+            //Sustituyo la clase del modelo Land por la del espejo
+            //LandItemViewModel para no alterar el patron MVVM
+            //this.Lands = new ObservableCollection<Land>(this.landsList)
+
+            //la forma de armar la lista cambio porque inicialmente
+            //una nacia de la clase Land y ahora de otra collection
+            //diferente que es del tipo LandItemViewModel
+            //ambas heredan de la misma pero no son compatibles los tipos de objetos
+
+
+            //Hay que hacer una transformacion de listas de una de tipo 
+            //Land por una de LandItemViewModel
+
+            this.Lands = new ObservableCollection<LandItemViewModel>(
+                //creamos un nuevo metodo ToLandItemViewModel para hacer 
+                //la transformacion de listas
+                //
+                //Adicionalmente como landsList es una propiedad global no
+                //se necesita pasarla como parametro
+                //private IEnumerable<LandItemViewModel> ToLandItemViewModel(List<Land> landsList)
+
+
+                ToLandItemViewModel());
             this.IsRefreshing = false;
         }
+
+
 
         private void Search()
         {
             if(string.IsNullOrEmpty(this.Filter))
             {
-                this.Lands = new ObservableCollection<Land>(
-                    this.landsList);
+                //cambio el filtro para poder leer una lista
+                //de tipo LandsItenmViewModel con el metodo ToLandItemViewModel
+                //this.Lands = new ObservableCollection<LandItemViewModel>(
+                //  this.landsList();
+                this.Lands = new ObservableCollection<LandItemViewModel>(
+                    ToLandItemViewModel());
             }
             else
             {
                 //busco por nombre del pais o de la capital
-                this.Lands = new ObservableCollection<Land>(
-                    this.landsList.Where(l =>l.Name.ToLower().Contains(this.Filter.ToLower()) ||
+
+                //En el filtro tambien sustituyo la clase del modelo Land por la del espejo
+                //LandItemViewModel para no alterar el patron MVVM
+                //this.Lands = new ObservableCollection<Land>(
+
+
+                // this.Lands = new ObservableCollection<LandItemViewModel>(
+                //    this.tolandsList().Where
+
+                //lo que esta mas arriba lo cambie por esta instruccion que usa 
+                //el metodo ToLandItemViewModel()
+                this.Lands = new ObservableCollection<LandItemViewModel>(
+                    this.ToLandItemViewModel().Where(l =>l.Name.ToLower().Contains(this.Filter.ToLower()) ||
                                          l.Capital.ToLower().Contains(this.Filter.ToLower())));
             }
 
+        }
+        //creamos un nuevo metodo ToLandItemViewModel para hacer 
+        //la transformacion de listas
+        //como landsList es una propiedad global no se necesita pasarla como parametro
+        //private IEnumerable<LandItemViewModel> ToLandItemViewModel(List<Land> landsList)
+
+        private IEnumerable<LandItemViewModel> ToLandItemViewModel()
+        {
+           //Usamos linq para hacer el cambio en una sola instruaccion
+            return this.landsList.Select(l => new LandItemViewModel
+            {
+                Alpha2Code = l.Alpha2Code,
+                Alpha3Code = l.Alpha3Code,
+                AltSpellings = l.AltSpellings,
+                Area = l.Area,
+                Borders = l.Borders,
+                CallingCodes = l.CallingCodes,
+                Capital = l.Capital,
+                Cioc = l.Cioc,
+                Currencies = l.Currencies,
+                Demonym = l.Demonym,
+                Flag = l.Flag,
+                Gini = l.Gini,
+                Languages = l.Languages,
+                Latlng = l.Latlng,
+                Name = l.Name,
+                NativeName = l.NativeName,
+                NumericCode = l.NumericCode,
+                Population = l.Population,
+                Region = l.Region,
+                RegionalBlocs = l.RegionalBlocs,
+                Subregion = l.Subregion,
+                Timezones = l.Timezones,
+                TopLevelDomain = l.TopLevelDomain,
+                Translations = l.Translations,
+            });
         }
         #endregion
 
