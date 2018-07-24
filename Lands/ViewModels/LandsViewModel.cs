@@ -106,6 +106,7 @@ namespace Lands.ViewModels
             //luego lo convieto en un obsevablecollection
 
             this.landsList = (List<Land>)response.Result;
+
             //Sustituyo la clase del modelo Land por la del espejo
             //LandItemViewModel para no alterar el patron MVVM
             //this.Lands = new ObservableCollection<Land>(this.landsList)
@@ -125,7 +126,7 @@ namespace Lands.ViewModels
                 //
                 //Adicionalmente como landsList es una propiedad global no
                 //se necesita pasarla como parametro
-                //private IEnumerable<LandItemViewModel> ToLandItemViewModel(List<Land> landsList)
+                //this.Lands = new IEnumerable<LandItemViewModel> ToLandItemViewModel(List<Land> landsList)
 
 
                 ToLandItemViewModel());

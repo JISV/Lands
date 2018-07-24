@@ -17,7 +17,7 @@ namespace Lands.ViewModels
         }
         //LandDetailViewModel es la clase para mostrar
         //el detalle del pais
-        public LandDetailViewModel LandDetail
+        public LandDetailViewModel Land
         {
             get;
             set;

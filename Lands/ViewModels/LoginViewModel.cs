@@ -75,6 +75,8 @@ namespace Lands.ViewModels
         //Aqui validamos lo que el usuario escribe para el login
         private async void Login()
         {
+            
+
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -95,6 +97,9 @@ namespace Lands.ViewModels
 
             this.IsRunning = true;
             this.IsEnabled = false;
+
+            //Temporal
+
 
             if (this.Email != "jisv@gmail.com" || this.Password != "1234")
             {
