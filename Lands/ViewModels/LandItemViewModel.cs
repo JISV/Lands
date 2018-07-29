@@ -30,7 +30,7 @@
             //invocamos la MainViewModel utilizando el GetIntance() del patron Singleton
             //El objeto es el pais seleccionado (this)
             MainViewModel.GetInstance().Land = new LandDetailViewModel(this);
-            await Application.Current.MainPage.Navigation.PushAsync(new LandDetailPage());
+            await Application.Current.MainPage.Navigation.PushAsync(new LandTabbedPage());
         }
         #endregion
 

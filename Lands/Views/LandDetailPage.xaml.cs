@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿
 
 namespace Lands.Views
 {
+using Xamarin.Forms;
+
     public partial class LandDetailPage : ContentPage
     {
         public LandDetailPage()

@@ -27,7 +27,11 @@ namespace Lands.ViewModels
         //private ObservableCollection<Land> lands;
         private ObservableCollection<LandItemViewModel> lands;
         private string filter;
-        private List<Land> landsList;
+        //voy a crear un objeto como este en la mainviewmodel
+        //para poder guardar la lista de paises y usarla en el modelo borders
+        //ahora la elimino y voy a usar la de la mainviewmodel
+
+        //private List<Land> landsList; 
         #endregion
 
         #region Properties
@@ -105,7 +109,8 @@ namespace Lands.ViewModels
             //Asi que creo una var lista y la casteo a un objeto tipo lista
             //luego lo convieto en un obsevablecollection
 
-            this.landsList = (List<Land>)response.Result;
+            //sustitui la landlist original por la que viene del mainviewmodel
+            MainViewModel.GetInstance().LandsList = (List<Land>)response.Result;
 
             //Sustituyo la clase del modelo Land por la del espejo
             //LandItemViewModel para no alterar el patron MVVM
@@ -173,8 +178,10 @@ namespace Lands.ViewModels
 
         private IEnumerable<LandItemViewModel> ToLandItemViewModel()
         {
-           //Usamos linq para hacer el cambio en una sola instruaccion
-            return this.landsList.Select(l => new LandItemViewModel
+           //Usamos linq para hacer el cambio en una sola instruccion
+           //ademas sustituimos el this.landslist por el de la mainviewmodel
+
+            return MainViewModel.GetInstance().LandsList.Select(l => new LandItemViewModel
             {
                 Alpha2Code = l.Alpha2Code,
                 Alpha3Code = l.Alpha3Code,

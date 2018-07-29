@@ -1,8 +1,24 @@
-﻿using System;
-namespace Lands.ViewModels
+﻿namespace Lands.ViewModels
 {
+using System.Collections.Generic;
+using Lands.Models;
+
     public class MainViewModel
     {
+
+        #region Propierties
+
+        //esto era un atributo de lalandsviewmodel
+        //ahora lo convierto en una propiedad
+        //publica y le cambio el nombre a Lands
+
+        public  List<Land> LandsList
+        {
+            get;
+            set;
+        }
+        #endregion
+
         #region ViewModels
         public LoginViewModel Login
         {

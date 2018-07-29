@@ -106,6 +106,11 @@
     <AndroidResource Include="Resources\drawable-xhdpi\ic_Chevron_Right.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\ic_Chevron_Right.png" />
     <AndroidResource Include="Resources\drawable-xxxhdpi\ic_Chevron_Right.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_info.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_language.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_monetization_on.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_people.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_translate.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />

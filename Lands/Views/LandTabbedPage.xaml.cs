@@ -1,11 +1,15 @@
 ﻿namespace Lands.Views
 {
+using System;
 using Xamarin.Forms;
-    public partial class LandsPage : ContentPage
+
+    public partial class LandTabbedPage : TabbedPage
     {
-        public LandsPage()
+        public LandTabbedPage()
         {
             InitializeComponent();
         }
+
+       
     }
 }

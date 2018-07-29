@@ -1,9 +1,10 @@
 ﻿namespace Lands.Views
 {
 using Xamarin.Forms;
-    public partial class LandsPage : ContentPage
+
+    public partial class BordersPage : ContentPage
     {
-        public LandsPage()
+        public BordersPage()
         {
             InitializeComponent();
         }
