@@ -7,12 +7,53 @@
     Icon="ic_action_monetization_on"
     Title="Currencies">
     <ContentPage.Content>
-        <StackLayout>
-                <Label 
-                    HorizontalOptions="CenterAndExpand"
-                    Text="Currencies"
-                    VerticalOptions="CenterAndExpand">
-                </Label>
+        <StackLayout 
+            BindingContext="{Binding Land}"
+            Padding="5">
+                <Label
+                    FontSize="Large"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    Text="{Binding Land.Name}">
+                 </Label>
+            <ListView
+                HasUnevenRows="true"
+                ItemsSource="{Binding Currencies}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Column="0"
+                                        FontAttributes="Bold"
+                                        FontSize="Medium" 
+                                        Text="{Binding Code}"
+                                        TextColor="Black">
+                                    </Label>
+                                    <Label
+                                        Grid.Column="1"
+                                        FontAttributes="Bold"
+                                        FontSize="Medium" 
+                                        Text="{Binding Name}"
+                                        TextColor="Black">
+                                    </Label>
+                                    <Label
+                                        Grid.Column="1"
+                                        FontAttributes="Bold"
+                                        FontSize="Medium" 
+                                        Text="{Binding Symbol}"
+                                        TextColor="Black">
+                                    </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
