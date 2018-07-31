@@ -32,7 +32,7 @@
                                         Grid.Column="0"
                                         FontAttributes="Bold"
                                         FontSize="Medium" 
-                                        Text="{Binding Iso6391}"
+                                        Text="{Binding Iso6392}"
                                         TextColor="Black">
                                     </Label>
                                     <Label
@@ -43,7 +43,7 @@
                                         TextColor="Black">
                                     </Label>
                                     <Label
-                                        Grid.Column="1"
+                                        Grid.Column="2"
                                         FontAttributes="Bold"
                                         FontSize="Medium" 
                                         Text="{Binding NativeName}"

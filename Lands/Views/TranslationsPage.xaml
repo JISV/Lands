@@ -25,7 +25,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="0"
-                    Text="{i18n:Translate German}"
+                    Text="German"
                     TextColor="Black">
                 </Label>
                 <Label
@@ -38,7 +38,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="1"
-                    Text="{i18n:Translate Spanish}"
+                    Text="Spanish"
                     TextColor="Black">
                 </Label>
                 <Label
@@ -51,7 +51,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="2"
-                    Text="{i18n:Translate French}"
+                    Text="French"
                     TextColor="Black">
                 </Label>
                 <Label
@@ -64,7 +64,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="3"
-                    Text="{i18n:Translate Japanese}"
+                    Text="Japanese"
                     TextColor="Black">
                 </Label>
                 <Label
@@ -77,7 +77,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="4"
-                    Text="{i18n:Translate Italian}"
+                    Text="Italian"
                     TextColor="Black">
                 </Label>
                 <Label
@@ -90,7 +90,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="5"
-                    Text="{i18n:Translate Brazilian}"
+                    Text="Brazilian"
                     TextColor="Black">
                 </Label>
                 <Label
@@ -103,7 +103,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="6"
-                    Text="{i18n:Translate Portuguese}"
+                    Text="Portuguese"
                     TextColor="Black">
                 </Label>
                 <Label
@@ -116,7 +116,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="7"
-                    Text="{i18n:Translate Dutch}"
+                    Text="Dutch"
                     TextColor="Black">
                 </Label>
                 <Label
@@ -129,7 +129,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="8"
-                    Text="{i18n:Translate Croatian}"
+                    Text="Croatian"
                     TextColor="Black">
                 </Label>
                 <Label
@@ -142,7 +142,7 @@
                 <Label
                     Grid.Column="0"
                     Grid.Row="9"
-                    Text="{i18n:Translate Persian}"
+                    Text="Persian"
                     TextColor="Black">
                 </Label>
                 <Label
