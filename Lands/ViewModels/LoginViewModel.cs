@@ -79,15 +79,13 @@ namespace Lands.ViewModels
 
         }
 
-
-
         //Aqui validamos lo que el usuario escribe para el login
         private async void Login()
         {
-
-
+            //instanciamos el servicio que nos va a traer el token
             this.apiService = new ApiService();
 
+            //verificamos que el usuario puso un email
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -97,6 +95,7 @@ namespace Lands.ViewModels
                 return;
             };
 
+            //verificamos que puso un password
             if (string.IsNullOrEmpty(this.Password))
             {
                 await Application.Current.MainPage.DisplayAlert(
@@ -106,6 +105,7 @@ namespace Lands.ViewModels
                 return;
             };
 
+            //activo el activity indicator y deshabilito el boton
             this.IsRunning = true;
             this.IsEnabled = false;
 
@@ -139,7 +139,7 @@ namespace Lands.ViewModels
                     "Accept");
                 return;
             }
-            //verfico si el token tiene algun problema (password o user invalido)
+            //si no es nulo, verfico si el token tiene algun problema (password o user invalido)
             if (string.IsNullOrEmpty(token.AccessToken))
             {
                 this.IsRunning = false;
@@ -157,13 +157,13 @@ namespace Lands.ViewModels
             this.IsEnabled = true;
 
             //pero debemos guardarlo por si el usuario
-            //decide cambiar password y hay que hacerlos de
+            //decide cambiar password y hay que hacerlo de
             //forma segura
             //como el token lo necesitamos en memoria
             //y no gaurdarlos en disco a menos que lo encriptemos
-            //lo gaurdamos en la MainViewModel
+            //lo guardamos en la MainViewModel (ver propiedad Token en la MainViewModel)
 
-            //creo un apuntador para la mainviewmodel
+            //creo un apuntador para el singleton de la mainviewmodel
             var mainViewModel = MainViewModel.GetInstance();
             mainViewModel.Token = token;
 
