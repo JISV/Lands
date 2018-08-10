@@ -8,15 +8,23 @@ using Lands.Models;
 
         #region Propierties
 
-        //esto era un atributo de lalandsviewmodel
+        //esto era un atributo de la landsviewmodel
         //ahora lo convierto en una propiedad
-        //publica y le cambio el nombre a Lands
+        //publica y le cambio el nombre a LandsList
 
         public  List<Land> LandsList
         {
             get;
             set;
         }
+        //creo una propieddad que guardara
+        //el token durante la sesion
+        public TokenResponse Token
+        {
+            get;
+            set;
+        }
+
         #endregion
 
         #region ViewModels

@@ -9,10 +9,19 @@ namespace Lands.ViewModels
     using GalaSoft.MvvmLight.Command;
     using Lands.Views;
     using Xamarin.Forms;
+    using Services;
 
     public class LoginViewModel: BaseViewModel
     {
-        
+
+
+
+        //Creo una region para los servicios por lo importantes que son
+        //el apisService lo instanciamos en el constructor
+        #region Services
+        private ApiService apiService;
+        #endregion
+
         //En los atributos pongo las propiedades privadas para los
         //campos que se tengan que refrescar en los controles
         //las pongo con el mismo nombre que las publicas pero en minuscula
@@ -75,7 +84,9 @@ namespace Lands.ViewModels
         //Aqui validamos lo que el usuario escribe para el login
         private async void Login()
         {
-            
+
+
+            this.apiService = new ApiService();
 
             if (string.IsNullOrEmpty(this.Email))
             {
@@ -98,31 +109,75 @@ namespace Lands.ViewModels
             this.IsRunning = true;
             this.IsEnabled = false;
 
-            //Temporal
-
-
-            if (this.Email != "jisv@gmail.com" || this.Password != "1234")
+            //valido si hay conexion a internet
+            var connection = await this.apiService.CheckConnection();
+            //Si no hay le doy error
+            if(!connection.IsSuccess)
             {
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "Invalid email or password.",
+                    connection.Message,
                     "Accept");
-                //limpio el campo
-                this.Password = string.Empty;
+                return;
+            }
+            //Si hay conexion, debemos generar el token
+            var token = await this.apiService.GetToken(
+                "http://landsapijs.azurewebsites.net", 
+                this.Email, 
+                this.Password);
+            //valido como llego el obj token
+            //primero verifico si es nulo
+            if (token==null)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Something was wrong. Please try later.",
+                    "Accept");
+                return;
+            }
+            //verfico si el token tiene algun problema (password o user invalido)
+            if (string.IsNullOrEmpty(token.AccessToken))
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    token.ErrorDescription,
+                    "Accept");
+                this.Password = string.Empty; //normalmente el password esta malo y limpio el entry
                 return;
             }
 
+            //Aqui ya tenemos el token
             this.IsRunning = false;
             this.IsEnabled = true;
+
+            //pero debemos guardarlo por si el usuario
+            //decide cambiar password y hay que hacerlos de
+            //forma segura
+            //como el token lo necesitamos en memoria
+            //y no gaurdarlos en disco a menos que lo encriptemos
+            //lo gaurdamos en la MainViewModel
+
+            //creo un apuntador para la mainviewmodel
+            var mainViewModel = MainViewModel.GetInstance();
+            mainViewModel.Token = token;
 
             this.Email = string.Empty;
             this.Password = string.Empty;
 
+            //elimino la linea de codigo que esta abajo para sustituirla por
+            //el apuntador para el singleton que cree un poco antes (var mainViewModel)
+            //ya que uso varias veces el singleton
+            //MainViewModel.GetInstance().Lands = new LandsViewModel();
+
             //Antes de instaciar la pagina, uso el singleton para
             //instanciar la nueva ViewModel que voy a vincular a la page, en este caso LandsViewModel
-            MainViewModel.GetInstance().Lands = new LandsViewModel();
+            mainViewModel.Lands = new LandsViewModel();
             await Application.Current.MainPage.Navigation.PushAsync(new LandsPage());
         }
 
