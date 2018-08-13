@@ -13,7 +13,7 @@
             para que se vea en android-->
             <SearchBar
                 BackgroundColor="Silver"
-                HeightRequest="42"
+                HeightRequest="46"
                 Placeholder="Search..."
                 SearchCommand="{Binding SearchCommand}"
                 Text="{Binding Filter, Mode=TwoWay}">

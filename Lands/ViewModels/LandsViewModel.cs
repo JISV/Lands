@@ -119,7 +119,7 @@ namespace Lands.ViewModels
             //la forma de armar la lista cambio porque inicialmente
             //una nacia de la clase Land y ahora de otra collection
             //diferente que es del tipo LandItemViewModel
-            //ambas heredan de la misma pero no son compatibles los tipos de objetos
+            //ambas heredan de la misma clase pero no son compatibles los tipos de objetos
 
 
             //Hay que hacer una transformacion de listas de una de tipo 
@@ -129,11 +129,9 @@ namespace Lands.ViewModels
                 //creamos un nuevo metodo ToLandItemViewModel para hacer 
                 //la transformacion de listas
                 //
-                //Adicionalmente como landsList es una propiedad global no
-                //se necesita pasarla como parametro
+                //Adicionalmente como landsList es una propiedad global 
+                //no se necesita pasarla como parametro
                 //this.Lands = new IEnumerable<LandItemViewModel> ToLandItemViewModel(List<Land> landsList)
-
-
                 ToLandItemViewModel());
             this.IsRefreshing = false;
         }
