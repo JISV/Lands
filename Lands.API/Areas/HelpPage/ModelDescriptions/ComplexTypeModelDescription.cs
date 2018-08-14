@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace Lands.API.Areas.HelpPage.ModelDescriptions
+namespace Lands.Api.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

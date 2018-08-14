@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Lands.API
+namespace Lands.Api
 {
     public class RouteConfig
     {

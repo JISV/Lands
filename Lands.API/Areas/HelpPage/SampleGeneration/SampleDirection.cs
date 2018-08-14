@@ -1,4 +1,4 @@
-namespace Lands.API.Areas.HelpPage
+namespace Lands.Api.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response

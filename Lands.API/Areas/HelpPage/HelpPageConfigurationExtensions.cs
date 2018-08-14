@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using Lands.API.Areas.HelpPage.ModelDescriptions;
-using Lands.API.Areas.HelpPage.Models;
+using Lands.Api.Areas.HelpPage.ModelDescriptions;
+using Lands.Api.Areas.HelpPage.Models;
 
-namespace Lands.API.Areas.HelpPage
+namespace Lands.Api.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

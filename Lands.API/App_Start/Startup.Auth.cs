@@ -8,10 +8,10 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Microsoft.Owin.Security.OAuth;
 using Owin;
-using Lands.API.Providers;
-using Lands.API.Models;
+using Lands.Api.Providers;
+using Lands.Api.Models;
 
-namespace Lands.API
+namespace Lands.Api
 {
     public partial class Startup
     {

@@ -1,7 +1,7 @@
 using System;
 using System.Reflection;
 
-namespace Lands.API.Areas.HelpPage.ModelDescriptions
+namespace Lands.Api.Areas.HelpPage.ModelDescriptions
 {
     public interface IModelDocumentationProvider
     {

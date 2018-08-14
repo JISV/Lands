@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Lands.API.Controllers
+namespace Lands.Api.Controllers
 {
     public class HomeController : Controller
     {

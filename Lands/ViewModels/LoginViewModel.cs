@@ -82,8 +82,8 @@ namespace Lands.ViewModels
         //Aqui validamos lo que el usuario escribe para el login
         private async void Login()
         {
-            //instanciamos el servicio que nos va a traer el token
-            this.apiService = new ApiService();
+
+            
 
             //verificamos que el usuario puso un email
             if (string.IsNullOrEmpty(this.Email))
@@ -124,7 +124,7 @@ namespace Lands.ViewModels
             }
             //Si hay conexion, debemos generar el token
             var token = await this.apiService.GetToken(
-                "http://landsapijs.azurewebsites.net", 
+                "http://landsdbapi.azurewebsites.net", 
                 this.Email, 
                 this.Password);
             //valido como llego el obj token
@@ -191,6 +191,12 @@ namespace Lands.ViewModels
         #region Constructors
         public LoginViewModel()
         {
+            this.Email = "jisv@me.com";
+            this.Password = "123456";
+
+            //instanciamos el servicio que nos va a traer el token
+            this.apiService = new ApiService();
+
             this.IsRemembered = true;
             //por defecto los bool son false por lo que para habilitar
             //los botones tengo que poner IsEnabled true

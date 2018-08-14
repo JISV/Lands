@@ -8,12 +8,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{85032044-EC41-43C0-8C2F-75C1A43D590A}</ProjectGuid>
+    <ProjectGuid>{50A02A47-1035-424F-9C5B-6D16267A1457}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Lands.API</RootNamespace>
-    <AssemblyName>Lands.API</AssemblyName>
+    <RootNamespace>Lands.Api</RootNamespace>
+    <AssemblyName>Lands.Api</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -279,7 +279,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\PublishProfiles\LandsAPIjs - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\landsdbapi - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -354,7 +354,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>50213</DevelopmentServerPort>
+          <DevelopmentServerPort>50191</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:50206/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>

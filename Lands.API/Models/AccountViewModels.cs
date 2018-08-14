@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Lands.API.Models
+namespace Lands.Api.Models
 {
     // Models returned by AccountController actions.
 

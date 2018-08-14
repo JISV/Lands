@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using Lands.API.Areas.HelpPage.ModelDescriptions;
-using Lands.API.Areas.HelpPage.Models;
+using Lands.Api.Areas.HelpPage.ModelDescriptions;
+using Lands.Api.Areas.HelpPage.Models;
 
-namespace Lands.API.Areas.HelpPage.Controllers
+namespace Lands.Api.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

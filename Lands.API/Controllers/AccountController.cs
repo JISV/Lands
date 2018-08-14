@@ -13,11 +13,11 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using Lands.API.Models;
-using Lands.API.Providers;
-using Lands.API.Results;
+using Lands.Api.Models;
+using Lands.Api.Providers;
+using Lands.Api.Results;
 
-namespace Lands.API.Controllers
+namespace Lands.Api.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]

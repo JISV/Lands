@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
 
-namespace Lands.API.Models
+namespace Lands.Api.Models
 {
     // Models used as parameters to AccountController actions.
 

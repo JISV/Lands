@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace Lands.API
+namespace Lands.Api
 {
     public class FilterConfig
     {

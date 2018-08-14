@@ -9,9 +9,9 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OAuth;
-using Lands.API.Models;
+using Lands.Api.Models;
 
-namespace Lands.API.Providers
+namespace Lands.Api.Providers
 {
     public class ApplicationOAuthProvider : OAuthAuthorizationServerProvider
     {
