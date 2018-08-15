@@ -10,6 +10,7 @@ namespace Lands.ViewModels
     using Lands.Views;
     using Xamarin.Forms;
     using Services;
+    using Helpers;
 
     public class LoginViewModel: BaseViewModel
     {
@@ -89,9 +90,9 @@ namespace Lands.ViewModels
             if (string.IsNullOrEmpty(this.Email))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must enter an email.",
-                    "Accept");
+                    Languages.Error, //Error
+                    Languages.EmailValidation,//EmailVaildation
+                    Languages.Accept); //Accept
                 return;
             };
 
@@ -99,9 +100,9 @@ namespace Lands.ViewModels
             if (string.IsNullOrEmpty(this.Password))
             {
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "You must enter a password.",
-                    "Accept");
+                    Languages.Error,//Error
+                    Languages.PasswordValidation, //PasswordValidation
+                    Languages.Accept);//Accept
                 return;
             };
 
@@ -117,9 +118,9 @@ namespace Lands.ViewModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     connection.Message,
-                    "Accept");
+                    Languages.Accept);
                 return;
             }
             //Si hay conexion, debemos generar el token
@@ -134,9 +135,9 @@ namespace Lands.ViewModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
-                    "Something was wrong. Please try later.",
-                    "Accept");
+                    Languages.Error,
+                    Languages.TokenNullValidation, //TokenNullValidation
+                    Languages.Accept);
                 return;
             }
             //si no es nulo, verfico si el token tiene algun problema (password o user invalido)
@@ -145,9 +146,9 @@ namespace Lands.ViewModels
                 this.IsRunning = false;
                 this.IsEnabled = true;
                 await Application.Current.MainPage.DisplayAlert(
-                    "Error",
+                    Languages.Error,
                     token.ErrorDescription,
-                    "Accept");
+                    Languages.Accept);
                 this.Password = string.Empty; //normalmente el password esta malo y limpio el entry
                 return;
             }

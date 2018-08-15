@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              x:Class="Lands.Views.LoginPage"
+             xmlns:i18n="clr-namespace:Lands.Helpers"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
-             Title="Login">
+             Title="{i18n:Translate Login}">
     <ContentPage.Content>
         <ScrollView
             BindingContext="{Binding Login}">
@@ -25,27 +26,27 @@
                 <Label 
                     Grid.Row="0"
                     Grid.Column="0"
-                    Text="Email"
+                    Text="{i18n:Translate Email}"
                     VerticalTextAlignment="Center">
                 </Label>
                  <Entry
                     Grid.Row="0"
                     Grid.Column="1"
                     Keyboard="Email"
-                    Placeholder="Enter your email..."
+                    Placeholder="{i18n:Translate EmailPlaceholder}"
                     Text="{Binding Email, Mode=TwoWay}">
                 </Entry>
                 <Label 
                     Grid.Row="1"
                     Grid.Column="0"
-                    Text="Password"
+                    Text="{i18n:Translate Password}"
                     VerticalTextAlignment="Center">
                 </Label>
                 <Entry
                     Grid.Row="1"
                     Grid.Column="1"
                     IsPassword="true"
-                    Placeholder="Enter your password..."
+                    Placeholder="{i18n:Translate EnterPassword}"
                     Text="{Binding Password, Mode=TwoWay}">
                 </Entry> 
             </Grid>
@@ -59,7 +60,7 @@
                     VerticalOptions="CenterAndExpand">
                 <Label 
                     HorizontalOptions="StartAndExpand"
-                    Text="Remember me on this device"
+                    Text="{i18n:Translate RememberMe}"
                     VerticalOptions="Center">
                 </Label>
                 <Switch
@@ -86,7 +87,7 @@
                 HeightRequest="46"
                 HorizontalOptions="FillAndExpand"
                 IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                Text="Login   "
+                Text="{i18n:Translate Login}   "
                 TextColor="White">
             </Button>
             <Button
@@ -97,7 +98,7 @@
                 HeightRequest="46"
                 HorizontalOptions="FillAndExpand"
                 IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
-                Text="Register"
+                Text="{i18n:Translate Register}"
                 TextColor="White">
             </Button>
             </StackLayout>
