@@ -27,6 +27,9 @@
     <Compile Remove="Views\MyPage.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Lands.Domain\Lands.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Update="Resources\Resource.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
