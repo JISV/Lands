@@ -9,11 +9,13 @@
              BackgroundColor="Silver"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
              Title="{i18n:Translate Countries}">
+    
     <ContentPage.Resources>
         <ResourceDictionary>
-            <ffimageloadingsvg:SvgImageSourceConverter x:Key="SvgImageSourceConverter"/>
+                <ffimageloadingsvg:SvgImageSourceConverter x:Key="SvgImageSourceConverter"></ffimageloadingsvg:SvgImageSourceConverter>
         </ResourceDictionary>
     </ContentPage.Resources>
+
     <ContentPage.Content>
         <StackLayout 
             BindingContext="{Binding Lands}"
@@ -58,7 +60,7 @@
                                     <ffimageloading:CachedImage
                                         Grid.Column="0"
                                         HeightRequest="30"
-                                        Source="{Binding Flag, Converter={StaticResource SvgImageSourceConverter}}"
+                                        Source="{Binding Flag,Converter={StaticResource SvgImageSourceConverter}}"
                                         WidthRequest="60">
                                     </ffimageloading:CachedImage>
                                     <StackLayout 
