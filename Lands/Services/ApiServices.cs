@@ -6,10 +6,12 @@
     using System.Net.Http.Headers;
     using System.Text;
     using System.Threading.Tasks;
+    using Domain;
     using Helpers;
     using Models;
     using Newtonsoft.Json;
     using Plugin.Connectivity;
+
 
     public class ApiService
     {

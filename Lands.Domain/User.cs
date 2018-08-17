@@ -10,7 +10,7 @@
         public int UserId { get; set; }
 
         [Display(Name = "First Name")]//Display es como queremos que aparezca el nombre del campo
-        [Required(ErrorMessage = "The field {0} is requiered.")]//estos mensajes son solodel backend no del app, no son multi-idioma
+        [Required(ErrorMessage = "The field {0} is requiered.")]//estos mensajes son solo del backend no del app, no son multi-idioma
         [MaxLength(50, ErrorMessage = "The field {0} only can contains a maximum of {1} characters lenght.")]
         public string FirstName { get; set; }
 
