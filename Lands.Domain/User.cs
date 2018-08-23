@@ -44,7 +44,7 @@
                 }
 
                 return string.Format(
-                    "https://landsdbapi.azurewebsites.net/{0}",
+                    "https://landsapijs.azurewebsites.net/{0}",
                     ImagePath.Substring(1));
             }
         }
